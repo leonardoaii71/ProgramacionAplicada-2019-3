@@ -96,7 +96,7 @@ namespace TicTacToe
         static void ShowMenu()
         {
             Console.Clear();
-            Console.WriteLine("Hola! vamo a juga' tic tac toe...");
+            Console.WriteLine("vamos a jugar tic tac toe!");
             Console.Write("\nSeleccione una opción:");
             Console.WriteLine("\n\t1: Jugar");
             Console.WriteLine("\t2: Salir");
