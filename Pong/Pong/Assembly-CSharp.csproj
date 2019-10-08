@@ -53,8 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BallBehaviour.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Pong\BallBehaviours.cs" />
+     <Compile Include="Assets\Scripts\Pong\DeadZoneController.cs" />
+     <Compile Include="Assets\Scripts\Pong\PongPlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Pong\WebClient.cs" />
+     <Compile Include="Assets\Scripts\ScrollingControler.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Leonardo/source/repos/ProgramacionAplicada/Pong/Pong/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
