@@ -28,6 +28,10 @@ public class itemGenerator : MonoBehaviour
         {
             if (block != null)
             {
+                if (block.wasHit)
+                {
+                    Destroy(block.gameObject);
+                }
                 block.transform.position += Vector3.down * BlocksMargin;
             }
         }
@@ -35,7 +39,7 @@ public class itemGenerator : MonoBehaviour
         for (int i = 0; i < maxwidth; i++)
         {
             var seed = UnityEngine.Random.Range(0, 100);
-            if (seed <= 30)
+            if (seed <= 50)
             {
                 var block = Instantiate(itemPrefab, GetPosition(i), Quaternion.identity);
                 int count = UnityEngine.Random.Range(1, 10) > 2 ? rowsSpawned + 1 : rowsSpawned + UnityEngine.Random.Range(rowsSpawned + 1, rowsSpawned * 2);

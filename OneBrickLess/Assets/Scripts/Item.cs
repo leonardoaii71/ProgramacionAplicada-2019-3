@@ -10,6 +10,7 @@ public class Item : MonoBehaviour
     public SpriteRenderer sprite;
     TextMeshPro text;
     public int count;
+    public bool wasHit = false;
     public GameObject particles;
     AudioSource audioSource;
 
@@ -28,6 +29,7 @@ public class Item : MonoBehaviour
     {
         this.count = count;
         updateCountText();
+
     }
 
     void updateCountText()
@@ -59,6 +61,7 @@ public class Item : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        wasHit = true;
         if (gameObject.name == "diffuser")
         {
             GetComponent<AreaEffector2D>().forceAngle = Random.Range(0f, 180);

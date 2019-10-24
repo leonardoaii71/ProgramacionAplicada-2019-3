@@ -333,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   count: 0
+  wasHit: 0
   particles: {fileID: 0}
 --- !u!82 &3619245721087134737
 AudioSource:
@@ -344,7 +345,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0207a4fe4390e544eaee32ede57e463d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62e377c408f5f76459bb82eecabddef7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -65,6 +65,7 @@ public class BallFirer : MonoBehaviour
  
     private void EndDrag()
     {
+       
         StartCoroutine(IniciarDisparos());
     }
 
@@ -92,6 +93,7 @@ public class BallFirer : MonoBehaviour
         ballsCount.SetText("x"+balls.Count.ToString());
         ballsReady++;
     }
+    
 
     public void ReturnBall()
     {
@@ -102,6 +104,7 @@ public class BallFirer : MonoBehaviour
         {
             itemGenerator.GenerateRowofBlocks();
             CreateBall();
+            puedeInteractuar = true;
         }
     }
 
