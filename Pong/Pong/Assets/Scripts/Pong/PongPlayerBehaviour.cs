@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +12,15 @@ public class PongPlayerBehaviour : MonoBehaviour {
     public Vector3 _deltaPos;
     public static bool _onePlayer;
     public GameObject _ball;
+    Animator animator;
+    ScoreCounter scoreCounter;
 
     public void Awake()
     {
         _isLeftPlayer = gameObject.name == "LeftPlayer";
         _ball = GameObject.Find("Ball");
+        animator = GetComponent<Animator>();
+        scoreCounter = GameObject.Find("LevelController").GetComponent<ScoreCounter>();
     }
 
 	// Use this for initialization
@@ -33,6 +38,10 @@ public class PongPlayerBehaviour : MonoBehaviour {
                                         transform.position.z);
              return;
         }
+        if (animator != null)
+        {
+            animator.SetFloat("SpeedY", _deltaPos.y);
+        }
 
         _deltaPos = new Vector3(0f, (
                 _isLeftPlayer 
@@ -46,4 +55,31 @@ public class PongPlayerBehaviour : MonoBehaviour {
                  transform.position.z);
 	
         }
+
+    private void OnTriggerEnter(Collider other) {
+        ScoreCounter.ScoreType scoreType;
+        Debug.Log("colision");
+        try
+        {
+            scoreType = (ScoreCounter.ScoreType)Enum.Parse(
+            typeof(ScoreCounter.ScoreType),
+            other.gameObject.tag);
+            
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
+        }
+        if (scoreType == ScoreCounter.ScoreType.Enemy)
+            scoreCounter.updateScore(ScoreCounter.ScoreType.Life, -1);
+        else
+            scoreCounter.updateScore(scoreType);
+
+        Destroy(other.gameObject);
+        /*if (scoreCounter.getLifeScore() <= 0)
+        {
+            Debug.Log("Game Over");
+        }*/
+    }
 }

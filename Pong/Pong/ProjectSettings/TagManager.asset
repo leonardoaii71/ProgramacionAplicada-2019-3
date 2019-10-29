@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Essence
+  - enemy
+  - blue
+  - diamond
+  - orange
+  - pinkDiamond
+  - purpleDiamond
+  - red
   layers:
   - Default
   - TransparentFX
