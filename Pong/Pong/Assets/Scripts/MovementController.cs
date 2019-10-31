@@ -22,7 +22,7 @@ public class MovementController : MonoBehaviour
             deltaPos = new Vector3(movementSpeed.x * Input.GetAxis("Horizontal"), 
             movementSpeed.y * Input.GetAxis("Vertical"));
 
-            deltaPos *= Time.deltaTime;
-            gameObject.transform.Translate(deltaPos);
+            //deltaPos *= Time.deltaTime;
+            gameObject.GetComponent<Rigidbody>().velocity = deltaPos;
     }
 }
