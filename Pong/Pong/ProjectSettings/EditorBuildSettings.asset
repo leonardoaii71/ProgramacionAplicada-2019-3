@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Taberna.unity
+    guid: be525b35971678f4cba3c3218924c2dc
+  - enabled: 1
+    path: Assets/Scenes/Pong.unity
+    guid: 4dba4ff71a61da645a3ef5ff814b3a1e
   m_configObjects: {}
