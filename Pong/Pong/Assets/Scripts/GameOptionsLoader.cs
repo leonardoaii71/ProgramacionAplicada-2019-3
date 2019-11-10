@@ -13,6 +13,7 @@ public class GameOptionsLoader : MonoBehaviour
 
    string localPath = "gameOptions.xml";
     public void SaveGameOptions(){
+        GameOptions.Instance.ToString();
        using(Stream fileStream = new FileStream(Application.persistentDataPath + "\\" + 
        localPath, FileMode.Create))
        {
@@ -23,12 +24,13 @@ public class GameOptionsLoader : MonoBehaviour
     }
 
      public void LoadGameOptions(){
-       using(Stream fileStream = new FileStream(Application.persistentDataPath + "\\" + 
-       localPath, FileMode.Open))
-       {
-           DataContractSerializer dataContract = new DataContractSerializer(typeof(GameOptions));
-           dataContract.ReadObject(fileStream);
-       }
+         GameOptions.Instance.ToString();
+        using (Stream fileStream = new FileStream(Application.persistentDataPath + "\\" + localPath, FileMode.Open))
+        {
+            DataContractSerializer dataContract = new DataContractSerializer(typeof(GameOptions));
+            GameOptions.Instance = (GameOptions)dataContract.ReadObject(fileStream);
+            
+        }
 
     }
 

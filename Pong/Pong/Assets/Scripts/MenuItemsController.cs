@@ -17,12 +17,16 @@ using UnityEngine.UI;
                 if(instance == null)
                     instance = new GameOptions();
                 return instance; 
-                }
+            }
 
             set { 
                 instance = value;
-                }
-        }        
+            }
+        }     
+        public override string ToString(){
+            return "name " + this.name + "volume " + this.volume + "dificultad " + this.dificultad;
+        }
+
     }
 
 
@@ -72,10 +76,9 @@ public class MenuItemsController : MonoBehaviour
         }
     }
 
-
     public void UpdateCanvasGUI(){
         GameObject.Find("NombreField").GetComponent<UnityEngine.UI.InputField>().text = GameOptions.Instance.name;
-        GameObject.Find("VolumeScroll").GetComponent<UnityEngine.UI.Slider>().value = GameOptions.Instance.volume;
+        //GameObject.Find("VolumeScroll").GetComponent<UnityEngine.UI.Slider>().value = GameOptions.Instance.volume;
         GameObject.Find("DificultadDrop").GetComponent<UnityEngine.UI.Dropdown>().value = GameOptions.Instance.dificultad;
     }
     

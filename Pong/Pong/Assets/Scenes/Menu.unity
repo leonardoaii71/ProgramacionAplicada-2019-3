@@ -412,7 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c92d3a3147a2e4693e994b21970c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsDialog: {fileID: 906150920}
 --- !u!65 &201474004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1187,7 +1186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c92d3a3147a2e4693e994b21970c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsDialog: {fileID: 906150920}
 --- !u!65 &361850321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2346,7 +2344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c92d3a3147a2e4693e994b21970c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsDialog: {fileID: 906150920}
 --- !u!65 &1086400411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2439,9 +2436,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 906150920}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 361850320}
+        m_MethodName: SubmitDialog
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2659,7 +2656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239635131}
   m_Layer: 0
-  m_Name: Options
+  m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
