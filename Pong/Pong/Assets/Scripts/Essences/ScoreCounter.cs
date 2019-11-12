@@ -6,13 +6,14 @@ using TMPro;
 public class ScoreCounter : MonoBehaviour
 {
 
-    private int blue_score, red_score, purpleDiamon_score, pinkDiamond_score, orange_score, diamond_score;
+    private int blue_score = 0, red_score = 0, purpleDiamon_score = 0, pinkDiamond_score = 0, orange_score = 0, diamond_score = 0, life_score = 10;
     public TextMeshPro blue_text;
     public TextMeshPro red_text;
     public TextMeshPro purpleDiamond_text;
     public TextMeshPro pinkDiamond_text;
     public TextMeshPro orange_text;
     public TextMeshPro diamond_text;
+    public TextMeshPro life_text;
 
     public enum ScoreType{
         blue,
@@ -21,25 +22,23 @@ public class ScoreCounter : MonoBehaviour
         pinkDiamond,
         orange,
         diamond,
-        Enemy,
+        enemy,
         Life,
         All
     }
     
     // Start is called before the first frame update
-
-
     void Start()
     {
       UpdateScoreText(ScoreType.All);
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int GetLifeScore(){
+        return life_score;
     }
+
+    
     void UpdateScoreText(ScoreType scoreType){
         if (scoreType == ScoreType.All || scoreType == ScoreType.blue)
         {
@@ -63,7 +62,11 @@ public class ScoreCounter : MonoBehaviour
         }
         if (scoreType == ScoreType.All || scoreType == ScoreType.diamond)
         {
-            blue_text.text = diamond_score.ToString();
+            diamond_text.text = diamond_score.ToString();
+        }
+        if (scoreType == ScoreType.All || scoreType == ScoreType.Life)
+        {
+            life_text.text = life_score.ToString();
         }
     }
     public void updateScore(ScoreType scoreType, int value=1){
@@ -75,24 +78,28 @@ public class ScoreCounter : MonoBehaviour
                     UpdateScoreText(ScoreType.blue);
                     break;
                case ScoreType.red:
-                    blue_score++;
+                    red_score++;
                     UpdateScoreText(ScoreType.red);
                     break;
                case ScoreType.orange:
-                    blue_score += value;
+                    orange_score += value;
                     UpdateScoreText(ScoreType.orange);
                     break;
                case ScoreType.diamond:
-                    blue_score += value;
+                    diamond_score += value;
                     UpdateScoreText(ScoreType.diamond);
                     break;
                case ScoreType.pinkDiamond:
-                    blue_score += value;
+                    pinkDiamond_score += value;
                    UpdateScoreText(ScoreType.pinkDiamond);
                     break;
                case ScoreType.purpleDiamond:
-                    blue_score += value;
+                    purpleDiamon_score += value;
                     UpdateScoreText(ScoreType.purpleDiamond);
+                    break;
+                case ScoreType.Life:
+                    life_score += value;
+                    UpdateScoreText(ScoreType.Life);
                     break;
                 default:
                     break;

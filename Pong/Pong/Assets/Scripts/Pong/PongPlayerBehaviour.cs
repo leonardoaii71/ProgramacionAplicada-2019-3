@@ -6,7 +6,6 @@ using UnityEngine;
 public class PongPlayerBehaviour : MonoBehaviour {
     
     public int UPPERLIMIT = 3, LOWERLIMIT = -3;
-
     public bool _isLeftPlayer;
     private float Speed = 10f;
     public Vector3 _deltaPos;
@@ -58,7 +57,6 @@ public class PongPlayerBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         ScoreCounter.ScoreType scoreType;
-        Debug.Log("colision");
         try
         {
             scoreType = (ScoreCounter.ScoreType)Enum.Parse(
@@ -67,11 +65,10 @@ public class PongPlayerBehaviour : MonoBehaviour {
             
         }
         catch (System.Exception)
-        {
-            
+        {   
             throw;
         }
-        if (scoreType == ScoreCounter.ScoreType.Enemy)
+        if (scoreType == ScoreCounter.ScoreType.enemy)
             scoreCounter.updateScore(ScoreCounter.ScoreType.Life, -1);
         else
             scoreCounter.updateScore(scoreType);

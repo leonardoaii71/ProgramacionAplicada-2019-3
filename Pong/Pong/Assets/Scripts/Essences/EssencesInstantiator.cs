@@ -7,7 +7,7 @@ public class EssencesInstantiator : MonoBehaviour
     // Start is called before the first frame update
     public List<GameObject> essences;
     public GameObject Trap;
-     GameObject newObject;
+    GameObject newObject;
     float trapRate = 0.1f;
     const float startingSeconds = 1f, repeatingSeconds = 0.8f;
     void Start()
@@ -22,7 +22,7 @@ public class EssencesInstantiator : MonoBehaviour
         else
             newObject = essences[Random.Range(0,6)];
         
-        Instantiate(newObject, new Vector3(0, Random.Range(-3.6f, 5.8f), 0), Quaternion.identity);
+        Instantiate(newObject, new Vector3(0, Random.Range(-3.6f, 3f), 0), Quaternion.identity);
         trapRate *= 1.01f;
    }
 }
