@@ -15,7 +15,7 @@ public class CameraPositionController : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = new Vector3(transform.position.x,
-        Mathf.Clamp(player.transform.position.y, -2.3f, 2.3f),
+        Mathf.Clamp(player.transform.position.y, -5.25f, 5.25f),
         gameObject.transform.position.z);
     }
 }
