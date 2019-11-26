@@ -12,6 +12,7 @@ TagManager:
   - pinkDiamond
   - purpleDiamond
   - red
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Item
+  - Character
   - 
   - 
   - 
@@ -48,4 +49,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: item
+    uniqueID: 3241726541
+    locked: 0
+  - name: character
+    uniqueID: 1476407
     locked: 0

@@ -5,13 +5,14 @@ using System.IO;
 using System.Runtime.Serialization;
 public class GameOptionsLoader : MonoBehaviour
 {
-
+    
+   string localPath = "gameOptions.xml";
+   
     private void Start() {
         LoadGameOptions();
         Debug.Log(PlayerPrefs.GetString("PlayerName", ""));
     }
 
-   string localPath = "gameOptions.xml";
     public void SaveGameOptions(){
         GameOptions.Instance.ToString();
        using(Stream fileStream = new FileStream(Application.persistentDataPath + "\\" + 
